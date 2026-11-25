@@ -1,19 +1,20 @@
-# PWA Frappe
+# MIS Application
 
 PWA Frappe adds installation manifests and a service worker to Frappe. MIS Development uses a central catalog and a separate installation page for each system.
 
-## MIS App Center
+## Installation portal
 
-Open [MIS App Center](https://dev.mwe-mis.maward.org/mis-apps) and choose a system. On Android, use the browser's install action from that system's page. On iPhone, use Safari's **Share → Add to Home Screen** and enable **Open as Web App** if offered. A page only shows its interactive Install button after the browser sends an installation prompt.
+Open [MIS Application](https://dev.mwe-mis.maward.org/mis-apps) and choose a system. On Android, use the browser's install action from that system's page. On iPhone, use Safari's **Share → Add to Home Screen** and enable **Open as Web App** if offered. A page only shows its interactive Install button after the browser sends an installation prompt.
 
 The system's stable identity is `/mis-apps/<application-code>`. Its manifest scope is `/mis-apps/<application-code>/`, with `/install` as its initial page and `/open` handing off to Frappe's ordinary login and native Desk entry. The browser may show navigation controls on the existing Desk or login route, depending on its handling of out-of-scope pages. Business permissions and data access remain with the target application and Frappe.
 
 ## Manage a catalog entry
 
-1. Open **PWA Application** in Desk as a System Manager. Create an entry with a permanent code, bilingual names, a short home-screen name, colors, version, an installed app and its verified existing entry route.
+1. Open **MIS Application → Manage applications** in Desk as a System Manager. Create an entry with a permanent code, bilingual names, a short home-screen name, colors, version, an installed app and its verified existing entry route.
 2. Upload public PNGs at 192 × 192 and 512 × 512. The optional maskable 512 × 512 icon should keep important art within the centered safe area.
-3. Save with **Published** cleared. Use **Preview branding** to check the entry. Publishing makes its install page, manifest and Open action available.
-4. Turn off **Published** to take an entry out of the center. Keep the original code when changing branding, version or the target entry route for an already distributed application.
+3. Save with **Published** cleared. Use **Preview saved branding** to check the entry. Publishing makes its install page, manifest and Open action available.
+4. Use **Display Order** to position the app in the portal. The saved record also offers the installation link and manifest.
+5. Turn off **Published** to take an entry out of the center. Keep the original code when changing branding, version or the target entry route for an already distributed application.
 
 The checked-in MIS catalog is a deployment configuration. Reapply it only when its values should replace the managed rows in Development. Unrelated records are preserved and rerunning the same catalog produces no duplicate records.
 

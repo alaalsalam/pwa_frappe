@@ -1,0 +1,17 @@
+{
+ "doctype": "Dock",
+ "name": "pwa_frappe",
+ "app": "pwa_frappe",
+ "user": "",
+ "standard": 1,
+ "items": [
+  {
+   "link_type": "Sidebar",
+   "link_to": "MIS Application",
+   "title": "MIS Application",
+   "icon": "smartphone",
+   "added": 0,
+   "hidden": 0
+  }
+ ]
+}

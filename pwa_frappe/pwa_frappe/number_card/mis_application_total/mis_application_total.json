@@ -1,0 +1,15 @@
+{
+ "doctype": "Number Card",
+ "name": "MIS Application Total",
+ "label": "Catalog entries",
+ "module": "Pwa Frappe",
+ "is_standard": 1,
+ "is_public": 1,
+ "type": "Document Type",
+ "document_type": "PWA Application",
+ "function": "Count",
+ "color": "#276278",
+ "filters_json": "[]",
+ "dynamic_filters_json": "[]",
+ "show_percentage_stats": 0
+}

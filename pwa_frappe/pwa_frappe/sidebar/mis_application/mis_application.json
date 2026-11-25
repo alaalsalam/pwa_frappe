@@ -1,0 +1,67 @@
+{
+ "doctype": "Sidebar",
+ "name": "MIS Application",
+ "title": "MIS Application",
+ "module": "Pwa Frappe",
+ "app": "pwa_frappe",
+ "standard": 1,
+ "header_icon": "smartphone",
+ "items": [
+  {
+   "type": "Link",
+   "label": "MIS Application",
+   "link_type": "Workspace",
+   "link_to": "PWA Frappe",
+   "icon": "smartphone",
+   "is_default_module": 1
+  },
+  {
+   "type": "Link",
+   "label": "Manage applications",
+   "link_type": "DocType",
+   "icon": "list",
+   "child": 0,
+   "link_to": "PWA Application"
+  },
+  {
+   "type": "Link",
+   "label": "Open installation portal",
+   "link_type": "URL",
+   "icon": "external-link",
+   "child": 0,
+   "url": "/mis-apps"
+  },
+  {
+   "type": "Section Break",
+   "label": "Shared settings",
+   "icon": "settings",
+   "collapsible": 1,
+   "keep_closed": 1
+  },
+  {
+   "type": "Link",
+   "label": "General web manifest",
+   "link_type": "DocType",
+   "icon": "file-code",
+   "child": 1,
+   "link_to": "Web App Manifest"
+  },
+  {
+   "type": "Link",
+   "label": "Service worker settings",
+   "link_type": "DocType",
+   "icon": "shield",
+   "child": 1,
+   "link_to": "Service Worker"
+  },
+  {
+   "type": "Link",
+   "label": "Push token records",
+   "link_type": "DocType",
+   "icon": "bell",
+   "child": 1,
+   "link_to": "FCM User Token"
+  }
+ ],
+ "show_nested_icons": 1
+}

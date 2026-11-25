@@ -1,0 +1,15 @@
+{
+ "doctype": "Number Card",
+ "name": "MIS Application Unpublished",
+ "label": "Unpublished",
+ "module": "Pwa Frappe",
+ "is_standard": 1,
+ "is_public": 1,
+ "type": "Document Type",
+ "document_type": "PWA Application",
+ "function": "Count",
+ "color": "#855c26",
+ "filters_json": "[[\"PWA Application\", \"enabled\", \"=\", 0]]",
+ "dynamic_filters_json": "[]",
+ "show_percentage_stats": 0
+}

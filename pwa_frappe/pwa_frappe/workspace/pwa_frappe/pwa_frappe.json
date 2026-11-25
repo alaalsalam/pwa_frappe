@@ -1,23 +1,36 @@
 {
  "charts": [],
- "content": "[{\"id\":\"pwa-header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">PWA Frappe</span>\",\"col\":12}},{\"id\":\"pwa-shortcut-apps\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"PWA Application\",\"col\":4}},{\"id\":\"pwa-shortcut-manifest\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Web App Manifest\",\"col\":4}},{\"id\":\"pwa-shortcut-sw\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Service Worker\",\"col\":4}},{\"id\":\"pwa-shortcut-fcm\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"FCM User Token\",\"col\":4}}]",
+ "content": "[{\"id\":\"mis-app-count-0\",\"type\":\"number_card\",\"data\":{\"col\":4,\"number_card_name\":\"MIS Application Total\"}},{\"id\":\"mis-app-count-1\",\"type\":\"number_card\",\"data\":{\"col\":4,\"number_card_name\":\"MIS Application Published\"}},{\"id\":\"mis-app-count-2\",\"type\":\"number_card\",\"data\":{\"col\":4,\"number_card_name\":\"MIS Application Unpublished\"}},{\"id\":\"mis-app-actions\",\"type\":\"header\",\"data\":{\"col\":12,\"text\":\"Manage applications\",\"level\":4}},{\"id\":\"mis-app-action-0\",\"type\":\"shortcut\",\"data\":{\"col\":4,\"shortcut_name\":\"Manage applications\"}},{\"id\":\"mis-app-action-1\",\"type\":\"shortcut\",\"data\":{\"col\":4,\"shortcut_name\":\"Open installation portal\"}},{\"id\":\"mis-app-action-2\",\"type\":\"shortcut\",\"data\":{\"col\":4,\"shortcut_name\":\"Add application\"}},{\"id\":\"mis-app-settings\",\"type\":\"header\",\"data\":{\"col\":12,\"text\":\"Shared settings\",\"level\":4}},{\"id\":\"mis-app-action-3\",\"type\":\"shortcut\",\"data\":{\"col\":4,\"shortcut_name\":\"General web manifest\"}},{\"id\":\"mis-app-action-4\",\"type\":\"shortcut\",\"data\":{\"col\":4,\"shortcut_name\":\"Service worker settings\"}},{\"id\":\"mis-app-action-5\",\"type\":\"shortcut\",\"data\":{\"col\":4,\"shortcut_name\":\"Push token records\"}}]",
  "creation": "2026-07-21 00:00:00.000000",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
  "for_user": "",
  "hide_custom": 0,
- "icon": "grid",
+ "icon": "smartphone",
  "idx": 0,
  "indicator_color": "",
  "is_hidden": 0,
- "label": "PWA Frappe",
+ "label": "MIS Application",
  "links": [],
  "modified": "2026-07-21 00:00:00.000000",
  "modified_by": "Administrator",
  "module": "Pwa Frappe",
  "name": "PWA Frappe",
- "number_cards": [],
+ "number_cards": [
+  {
+   "number_card_name": "MIS Application Total",
+   "label": "Catalog entries"
+  },
+  {
+   "number_card_name": "MIS Application Published",
+   "label": "Publication enabled"
+  },
+  {
+   "number_card_name": "MIS Application Unpublished",
+   "label": "Unpublished"
+  }
+ ],
  "owner": "Administrator",
  "parent_page": "",
  "public": 1,
@@ -31,33 +44,53 @@
  "sequence_id": 99.0,
  "shortcuts": [
   {
+   "label": "Manage applications",
+   "type": "DocType",
+   "icon": "list",
    "color": "Grey",
-   "doc_view": "List",
-   "label": "PWA Application",
    "link_to": "PWA Application",
-   "type": "DocType"
+   "doc_view": "List"
   },
   {
+   "label": "Open installation portal",
+   "type": "URL",
+   "icon": "external-link",
    "color": "Grey",
-   "doc_view": "",
-   "label": "Web App Manifest",
+   "url": "/mis-apps"
+  },
+  {
+   "label": "Add application",
+   "type": "DocType",
+   "icon": "plus",
+   "color": "Grey",
+   "link_to": "PWA Application",
+   "doc_view": "New"
+  },
+  {
+   "label": "General web manifest",
+   "type": "DocType",
+   "icon": "file-code",
+   "color": "Grey",
    "link_to": "Web App Manifest",
-   "type": "DocType"
+   "doc_view": ""
   },
   {
+   "label": "Service worker settings",
+   "type": "DocType",
+   "icon": "shield",
    "color": "Grey",
-   "doc_view": "",
-   "label": "Service Worker",
    "link_to": "Service Worker",
-   "type": "DocType"
+   "doc_view": ""
   },
   {
+   "label": "Push token records",
+   "type": "DocType",
+   "icon": "bell",
    "color": "Grey",
-   "doc_view": "List",
-   "label": "FCM User Token",
    "link_to": "FCM User Token",
-   "type": "DocType"
+   "doc_view": "List"
   }
  ],
- "title": "PWA Frappe"
+ "title": "MIS Application",
+ "standard": 1
 }

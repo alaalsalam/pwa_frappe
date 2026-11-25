@@ -34,7 +34,7 @@ def extend_bootinfo(bootinfo):
 def public_apps():
 	installed = set(frappe.get_installed_apps())
 	return [
-		app for app in frappe.get_all(DOCTYPE, filters={"enabled": 1}, fields=FIELDS, order_by="name")
+		app for app in frappe.get_all(DOCTYPE, filters={"enabled": 1}, fields=FIELDS, order_by="display_order asc, name asc")
 		if app.target_app in installed
 	]
 

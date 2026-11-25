@@ -1,0 +1,36 @@
+Manage applications,إدارة التطبيقات
+Open installation portal,فتح بوابة التثبيت
+Add application,إضافة تطبيق
+Shared settings,الإعدادات المشتركة
+General web manifest,ملف Manifest العام
+Service worker settings,إعدادات عامل الخدمة
+Push token records,سجلات رموز الإشعارات
+Catalog entries,إجمالي التطبيقات
+Publication enabled,النشر مفعّل
+Unpublished,غير منشورة
+Publication and release,النشر والإصدار
+Entry route,مسار الدخول
+Names and descriptions,الأسماء والأوصاف
+Colors and icons,الألوان والأيقونات
+Display Order,ترتيب العرض
+Published,منشور
+Application Code,رمز التطبيق
+Arabic Name,الاسم العربي
+English Name,الاسم الإنجليزي
+Home Screen Name,اسم الأيقونة على الشاشة الرئيسية
+Arabic Description,الوصف العربي
+English Description,الوصف الإنجليزي
+Installed App,التطبيق المثبّت
+Existing Entry Route,مسار الدخول الموجود
+Installation Preview,المعاينة وروابط التثبيت
+Theme Color,لون السمة
+Background Color,لون الخلفية
+Preview saved branding,معاينة الهوية المحفوظة
+Open installation page,فتح صفحة التثبيت
+View manifest,عرض ملف Manifest
+Copy installation link,نسخ رابط التثبيت
+Installation link copied,نُسخ رابط التثبيت
+Copy the address from the installation page.,انسخ العنوان من صفحة التثبيت.
+Save the application to preview its branding.,احفظ التطبيق لمعاينة هويته.
+Publish the installation page and manifest when you save. Clear to withdraw the entry.,تُنشر صفحة التثبيت وملف Manifest عند الحفظ. ألغِ التحديد لسحب التطبيق من المركز.
+Lower numbers appear earlier in the installation portal. Applications with the same order are sorted by code.,تظهر الأرقام الأصغر أولًا في بوابة التثبيت. وعند التساوي يُستخدم رمز التطبيق للترتيب.

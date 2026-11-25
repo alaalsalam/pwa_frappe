@@ -1,7 +1,7 @@
 app_name = "pwa_frappe"
-app_title = "Pwa Frappe"
+app_title = "MIS Application"
 app_publisher = "omfsakib@gmail.com"
-app_description = "Pwa Frappe"
+app_description = "Manage installation and publication of MIS applications."
 app_email = "omfsakib@gmail.com"
 app_license = "mit"
 
@@ -14,8 +14,8 @@ app_license = "mit"
 add_to_apps_screen = [
 	{
 		"name": "pwa_frappe",
-		"logo": "/assets/pwa_frappe/images/logo.svg",
-		"title": "PWA Frappe",
+		"logo": "/assets/pwa_frappe/images/mis-application.svg",
+		"title": "MIS Application",
 		"route": "/desk/pwa-frappe",
 		"has_permission": "pwa_frappe.app_center.can_manage",
 	}

@@ -8,6 +8,11 @@
  "title_field": "name_ar",
  "fields": [
   {
+   "fieldname": "publication_section",
+   "label": "Publication and release",
+   "fieldtype": "Section Break"
+  },
+  {
    "fieldname": "app_code",
    "label": "Application Code",
    "fieldtype": "Data",
@@ -21,37 +26,35 @@
    "label": "Published",
    "fieldtype": "Check",
    "default": "0",
-   "in_list_view": 1
+   "in_list_view": 1,
+   "description": "Publish the installation page and manifest when you save. Clear to withdraw the entry."
   },
   {
-   "fieldname": "name_ar",
-   "label": "Arabic Name",
+   "fieldname": "display_order",
+   "label": "Display Order",
+   "fieldtype": "Int",
+   "default": "100",
+   "non_negative": 1,
+   "description": "Lower numbers appear earlier in the installation portal. Applications with the same order are sorted by code."
+  },
+  {
+   "fieldname": "version",
+   "label": "Version",
    "fieldtype": "Data",
+   "default": "1.0.0",
    "reqd": 1,
-   "in_list_view": 1
+   "description": "Version shown in the manifest and the administration preview."
   },
   {
-   "fieldname": "name_en",
-   "label": "English Name",
-   "fieldtype": "Data",
-   "reqd": 1
+   "fieldname": "launch_url",
+   "label": "Installation Preview",
+   "fieldtype": "HTML",
+   "options": "<div class=\"pwa-install-preview\"></div>"
   },
   {
-   "fieldname": "short_name",
-   "label": "Home Screen Name",
-   "fieldtype": "Data",
-   "reqd": 1
-  },
-  {
-   "fieldname": "description",
-   "label": "Arabic Description",
-   "fieldtype": "Small Text",
-   "reqd": 1
-  },
-  {
-   "fieldname": "description_en",
-   "label": "English Description",
-   "fieldtype": "Small Text"
+   "fieldname": "routing_section",
+   "label": "Entry route",
+   "fieldtype": "Section Break"
   },
   {
    "fieldname": "target_app",
@@ -68,24 +71,65 @@
    "description": "Use the verified application landing path on this site."
   },
   {
-   "fieldname": "launch_url",
-   "label": "Installation Preview",
-   "fieldtype": "HTML",
-   "options": "<div class=\"pwa-install-preview\"></div>"
+   "fieldname": "identity_section",
+   "label": "Names and descriptions",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "name_ar",
+   "label": "Arabic Name",
+   "fieldtype": "Data",
+   "reqd": 1,
+   "in_list_view": 1,
+   "description": "Arabic name shown in the installation portal and manifest."
+  },
+  {
+   "fieldname": "name_en",
+   "label": "English Name",
+   "fieldtype": "Data",
+   "reqd": 1,
+   "description": "English name shown below the Arabic name in the portal."
+  },
+  {
+   "fieldname": "short_name",
+   "label": "Home Screen Name",
+   "fieldtype": "Data",
+   "reqd": 1,
+   "description": "Use a short label that can fit under the device home-screen icon."
+  },
+  {
+   "fieldname": "description",
+   "label": "Arabic Description",
+   "fieldtype": "Small Text",
+   "reqd": 1,
+   "description": "This text appears publicly on the installation portal."
+  },
+  {
+   "fieldname": "description_en",
+   "label": "English Description",
+   "fieldtype": "Small Text",
+   "description": "English summary of the application."
+  },
+  {
+   "fieldname": "appearance_section",
+   "label": "Colors and icons",
+   "fieldtype": "Section Break"
   },
   {
    "fieldname": "theme_color",
    "label": "Theme Color",
    "fieldtype": "Color",
    "reqd": 1,
-   "default": "#07555c"
+   "default": "#07555c",
+   "description": "Color supplied to browsers that apply the web app theme."
   },
   {
    "fieldname": "background_color",
    "label": "Background Color",
    "fieldtype": "Color",
    "reqd": 1,
-   "default": "#f4f8f7"
+   "default": "#f4f8f7",
+   "description": "Background color supplied to browsers at launch."
   },
   {
    "fieldname": "icon_192",
@@ -107,32 +151,30 @@
    "fieldtype": "Attach Image",
    "reqd": 0,
    "description": "Use a public PNG at its stated size."
-  },
-  {
-   "fieldname": "version",
-   "label": "Version",
-   "fieldtype": "Data",
-   "default": "1.0.0",
-   "reqd": 1
   }
  ],
  "field_order": [
+  "publication_section",
   "app_code",
   "enabled",
+  "display_order",
+  "version",
+  "launch_url",
+  "routing_section",
+  "target_app",
+  "entry_route",
+  "identity_section",
   "name_ar",
   "name_en",
   "short_name",
   "description",
   "description_en",
-  "target_app",
-  "entry_route",
-  "launch_url",
+  "appearance_section",
   "theme_color",
   "background_color",
   "icon_192",
   "icon_512",
-  "maskable_512",
-  "version"
+  "maskable_512"
  ],
  "permissions": [
   {
@@ -143,5 +185,7 @@
   }
  ],
  "sort_field": "name",
- "sort_order": "ASC"
+ "sort_order": "ASC",
+ "image_field": "icon_192",
+ "track_changes": 1
 }

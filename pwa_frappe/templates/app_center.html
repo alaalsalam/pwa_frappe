@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-	<title>{{ (app.name_ar if app else "مركز تطبيقات MIS") | e }}</title>
+	<title>{{ (app.name_ar if app else "MIS Application") | e }}</title>
 	<link rel="stylesheet" href="/assets/pwa_frappe/mis/center-v1.css">
 	{% if app and status == 200 and not preview %}
 	<meta name="theme-color" content="{{ app.theme_color | e }}">
@@ -16,7 +16,7 @@
 <body>
 <main class="shell">
 	<header class="mast">
-		<a href="{{ center }}" class="brand"><span class="brand-mark" dir="ltr">MIS</span> مركز التطبيقات</a>
+		<a href="{{ center }}" class="brand"><span class="brand-mark" dir="ltr">MIS</span> <span lang="en" dir="ltr">MIS Application</span></a>
 		<span class="environment"><span></span> بيئة التطوير</span>
 	</header>
 	{% if status == 403 %}
@@ -44,7 +44,7 @@
 	</section>
 	{% else %}
 	<section class="intro">
-		<p class="english" lang="en" dir="ltr">MIS App Center</p>
+		<p class="english" lang="en" dir="ltr">MIS Application</p>
 		<h1>مركز تطبيقات MIS</h1>
 		<p>اختر نظامًا لفتحه مباشرة أو تثبيته على الشاشة الرئيسية.</p>
 	</section>
