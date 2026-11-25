@@ -1,0 +1,147 @@
+{
+ "doctype": "DocType",
+ "name": "PWA Application",
+ "module": "Pwa Frappe",
+ "engine": "InnoDB",
+ "autoname": "field:app_code",
+ "naming_rule": "By fieldname",
+ "title_field": "name_ar",
+ "fields": [
+  {
+   "fieldname": "app_code",
+   "label": "Application Code",
+   "fieldtype": "Data",
+   "reqd": 1,
+   "set_only_once": 1,
+   "description": "Permanent lowercase identifier used by installed applications.",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "enabled",
+   "label": "Published",
+   "fieldtype": "Check",
+   "default": "0",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "name_ar",
+   "label": "Arabic Name",
+   "fieldtype": "Data",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "name_en",
+   "label": "English Name",
+   "fieldtype": "Data",
+   "reqd": 1
+  },
+  {
+   "fieldname": "short_name",
+   "label": "Home Screen Name",
+   "fieldtype": "Data",
+   "reqd": 1
+  },
+  {
+   "fieldname": "description",
+   "label": "Arabic Description",
+   "fieldtype": "Small Text",
+   "reqd": 1
+  },
+  {
+   "fieldname": "description_en",
+   "label": "English Description",
+   "fieldtype": "Small Text"
+  },
+  {
+   "fieldname": "target_app",
+   "label": "Installed App",
+   "fieldtype": "Data",
+   "reqd": 1,
+   "description": "Frappe package name for the application that owns the entry route."
+  },
+  {
+   "fieldname": "entry_route",
+   "label": "Existing Entry Route",
+   "fieldtype": "Data",
+   "reqd": 1,
+   "description": "Use the verified application landing path on this site."
+  },
+  {
+   "fieldname": "launch_url",
+   "label": "Installation Preview",
+   "fieldtype": "HTML",
+   "options": "<div class=\"pwa-install-preview\"></div>"
+  },
+  {
+   "fieldname": "theme_color",
+   "label": "Theme Color",
+   "fieldtype": "Color",
+   "reqd": 1,
+   "default": "#07555c"
+  },
+  {
+   "fieldname": "background_color",
+   "label": "Background Color",
+   "fieldtype": "Color",
+   "reqd": 1,
+   "default": "#f4f8f7"
+  },
+  {
+   "fieldname": "icon_192",
+   "label": "192 × 192 PNG",
+   "fieldtype": "Attach Image",
+   "reqd": 1,
+   "description": "Use a public PNG at its stated size."
+  },
+  {
+   "fieldname": "icon_512",
+   "label": "512 × 512 PNG",
+   "fieldtype": "Attach Image",
+   "reqd": 1,
+   "description": "Use a public PNG at its stated size."
+  },
+  {
+   "fieldname": "maskable_512",
+   "label": "512 × 512 Maskable PNG",
+   "fieldtype": "Attach Image",
+   "reqd": 0,
+   "description": "Use a public PNG at its stated size."
+  },
+  {
+   "fieldname": "version",
+   "label": "Version",
+   "fieldtype": "Data",
+   "default": "1.0.0",
+   "reqd": 1
+  }
+ ],
+ "field_order": [
+  "app_code",
+  "enabled",
+  "name_ar",
+  "name_en",
+  "short_name",
+  "description",
+  "description_en",
+  "target_app",
+  "entry_route",
+  "launch_url",
+  "theme_color",
+  "background_color",
+  "icon_192",
+  "icon_512",
+  "maskable_512",
+  "version"
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1
+  }
+ ],
+ "sort_field": "name",
+ "sort_order": "ASC"
+}

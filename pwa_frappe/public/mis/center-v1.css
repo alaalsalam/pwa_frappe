@@ -1,0 +1,56 @@
+:root {
+	color-scheme: light dark;
+	--base: #f2f7f6;
+	--panel: #fff;
+	--ink: #112e33;
+	--muted: #496164;
+	--line: #ccdddb;
+	--action: #07565c;
+	--action-ink: #fff;
+	font: 16px/1.65 system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+	:root {
+		--base: #102023;
+		--panel: #172c30;
+		--ink: #edf9f8;
+		--muted: #bbd1d2;
+		--line: #39585b;
+		--action: #a1e6dd;
+		--action-ink: #123136;
+	}
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--base); color: var(--ink); }
+a { color: var(--action); }
+.shell {
+	max-width: 1180px;
+	margin: auto;
+	padding: max(18px, env(safe-area-inset-top)) max(18px, env(safe-area-inset-right))
+		max(40px, env(safe-area-inset-bottom)) max(18px, env(safe-area-inset-left));
+}
+.mast { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space-between; align-items: center; }
+.brand { display: flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 700; text-decoration: none; }
+.brand-mark { background: var(--action); color: var(--action-ink); padding: 4px 12px; border-radius: 8px; }
+.environment { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: .85rem; }
+.environment span { background: var(--action); width: 8px; height: 8px; border-radius: 50%; }
+.intro { padding-block: clamp(32px, 7vw, 78px) 24px; }
+h1, h2, h3, p { margin: 0; }
+h1 { font-size: clamp(1.8rem, 5vw, 3.4rem); line-height: 1.35; }
+h2 { font-size: 1.15rem; }
+p { color: var(--muted); margin-block-start: .4em; }
+.english { text-align: right; font-size: .9rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 14px; }
+.panel, .card, .instructions { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: clamp(16px, 3vw, 28px); }
+.card { display: flex; flex-direction: column; align-items: flex-start; }
+.card img { margin-block-end: 12px; border-radius: 12px; }
+.panel { margin-block-start: 28px; }
+.app-detail { display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; }
+.app-detail img { border-radius: 22px; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; padding-block-start: 14px; margin-block-start: auto; }
+.button { display: inline-grid; place-items: center; border: 1px solid var(--action); min-height: 44px; padding: 6px 16px; border-radius: 8px; font: inherit; font-weight: 650; background: var(--action); color: var(--action-ink); text-decoration: none; cursor: pointer; }
+.button[hidden] { display: none; }
+.secondary { color: var(--action); background: transparent; }
+:focus-visible { outline: 2px solid var(--action); outline-offset: 3px; }
+.instructions { margin-block-start: 22px; }
+.platforms { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 18px 32px; margin-block-start: 12px; }

@@ -6,11 +6,12 @@
 {% endblock %}
 
 {% block page_content %}
+<script src="/pwa.js" defer></script>
 <h1>{{ _("How to install") }}</h1>
 <h2>{{ _("Learn how to install this application on your device") }}</h2>
 <p>{{ _("This application is actually a Progressive Web App (PWA) that can be directly installed to your device. Learn more about how to install this application on your device:")}}</p>
 
-<button class="btn btn-primary btn-pwa-install">{{ _("Install") }}</button>
+<button class="btn btn-primary btn-pwa-install" hidden>{{ _("Install") }}</button>
 
 <h2>{{_("Install on Chrome (desktop)")}}</h2>
 <p>{{_("When using Chrome for Desktop you can click on the menu (the 3 dots in the upper-right corner) then 'Install ...' to add the application to Chrome Applications.")}}</p>

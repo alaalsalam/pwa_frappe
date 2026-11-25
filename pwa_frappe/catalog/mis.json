@@ -1,0 +1,24 @@
+[
+  {
+    "app_code": "crms",
+    "target_app": "crms",
+    "name_ar": "نظام إدارة علاقة المشتركين",
+    "name_en": "Customer Relation Management System",
+    "short_name": "MIS CRMS",
+    "description": "إدارة المشتركين والخدمات والفوترة والتحصيل.",
+    "description_en": "Manage subscribers, services, billing and collection.",
+    "entry_route": "/crms-entry",
+    "theme_color": "#125a78"
+  },
+  {
+    "app_code": "fpss",
+    "target_app": "fpss",
+    "name_ar": "نظام المتابعة وخدمة الجمهور",
+    "name_en": "Follow-up and Public Service System",
+    "short_name": "MIS FPSS",
+    "description": "متابعة خدمات الجمهور والمراسلات والمواعيد.",
+    "description_en": "Follow up on public services, correspondence and appointments.",
+    "entry_route": "/desk/public-service-home",
+    "theme_color": "#18605c"
+  }
+]

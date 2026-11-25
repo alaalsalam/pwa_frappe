@@ -16,7 +16,8 @@ add_to_apps_screen = [
 		"name": "pwa_frappe",
 		"logo": "/assets/pwa_frappe/images/logo.svg",
 		"title": "PWA Frappe",
-		"route": "/app/pwa-frappe",
+		"route": "/desk/pwa-frappe",
+		"has_permission": "pwa_frappe.app_center.can_manage",
 	}
 ]
 
@@ -26,7 +27,7 @@ add_to_apps_screen = [
 # include js, css files in header of desk.html
 # app_include_css = "/assets/pwa_frappe/css/pwa_frappe.css"
 app_include_js = [
-	"pwa.bundle.js",
+	"/assets/pwa_frappe/js/pwa_frappe.js",
 ]
 
 # include js, css files in header of web template
@@ -138,11 +139,8 @@ app_include_js = [
 # ---------------
 # Hook on document methods and events
 
-doc_events = {
-	"Notification Log": {
-		"after_insert": "pwa_frappe.fcm.send_push_notification",
-	}
-}
+page_renderer = ["pwa_frappe.app_center.AppCenter"]
+extend_bootinfo = ["pwa_frappe.app_center.extend_bootinfo"]
 
 # Scheduled Tasks
 # ---------------

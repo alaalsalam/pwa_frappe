@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+	<title>{{ (app.name_ar if app else "مركز تطبيقات MIS") | e }}</title>
+	<link rel="stylesheet" href="/assets/pwa_frappe/mis/center-v1.css">
+	{% if app and status == 200 %}
+	<meta name="theme-color" content="{{ app.theme_color | e }}">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<link rel="manifest" href="{{ path_for(app) }}/manifest.webmanifest">
+	<link rel="apple-touch-icon" href="{{ app.icon_192 | e }}">
+	<script src="/assets/pwa_frappe/mis/center-v1.js" defer></script>
+	{% endif %}
+</head>
+<body>
+<main class="shell">
+	<header class="mast">
+		<a href="{{ center }}" class="brand"><span class="brand-mark" dir="ltr">MIS</span> مركز التطبيقات</a>
+		<span class="environment"><span></span> بيئة التطوير</span>
+	</header>
+	{% if status == 403 %}
+	<section class="panel"><h1>تعذر فتح {{ app.name_ar | e }}</h1>
+	<p>الحساب الحالي لا يملك صلاحية الدخول إلى هذا التطبيق.</p><a href="{{ center }}">العودة إلى مركز التطبيقات</a></section>
+	{% elif status == 404 %}
+	<section class="panel"><h1>التطبيق غير متاح</h1>
+	<p>يمكنك اختيار تطبيق متاح من مركز تطبيقات MIS.</p><a href="{{ center }}">العودة إلى مركز التطبيقات</a></section>
+	{% elif app %}
+	<section class="panel app-detail">
+		<img width="80" height="80" src="{{ app.icon_192 | e }}" alt="">
+		<div>
+			<h1>{{ app.name_ar | e }}</h1>
+			<p class="english" lang="en" dir="ltr">{{ app.name_en | e }}</p>
+			<p>{{ app.description | e }}</p>
+			<div class="actions">
+				<a class="button secondary" id="open-app" href="{{ path_for(app) }}/open">فتح التطبيق</a>
+				<button class="button" id="install-app" hidden>تثبيت التطبيق</button>
+			</div>
+		</div>
+	</section>
+	{% else %}
+	<section class="intro">
+		<p class="english" lang="en" dir="ltr">MIS App Center</p>
+		<h1>مركز تطبيقات MIS</h1>
+		<p>اختر نظامًا لفتحه مباشرة أو تثبيته على الشاشة الرئيسية.</p>
+	</section>
+	{% if apps %}
+	<section aria-label="التطبيقات المتاحة" class="grid">
+		{% for item in apps %}
+		<article class="card">
+			<img src="{{ item.icon_192 | e }}" alt="" width="48" height="48" loading="lazy">
+			<h2>{{ item.name_ar | e }}</h2>
+			<p class="english" lang="en" dir="ltr">{{ item.name_en | e }}</p>
+			<p>{{ item.description | e }}</p>
+			<div class="actions">
+				<a class="button" href="{{ path_for(item) }}" aria-label="طريقة تثبيت {{ item.name_ar | e }}">التثبيت</a>
+				<a class="button secondary" href="{{ path_for(item) }}/open" aria-label="فتح {{ item.name_ar | e }}">فتح</a>
+			</div>
+		</article>
+		{% endfor %}
+	</section>
+	{% else %}
+	<p class="panel">لا توجد تطبيقات منشورة حاليًا.</p>
+	{% endif %}
+	{% endif %}
+	{% if status == 200 %}
+	<section class="instructions" aria-labelledby="instructions">
+		<h2 id="instructions">التثبيت على الهاتف</h2>
+		<div class="platforms">
+			<div><h3>Android · Chrome</h3><p>افتح صفحة النظام في Chrome. من قائمة ⋮ اختر «تثبيت التطبيق» أو «إضافة إلى الشاشة الرئيسية» ثم أكّد.</p></div>
+			<div><h3>iPhone · Safari</h3><p>افتح صفحة النظام في Safari. اختر «مشاركة» ثم «إضافة إلى الشاشة الرئيسية». فعّل «فتح كتطبيق ويب» إذا ظهر الخيار، ثم اضغط «إضافة».</p></div>
+		</div>
+	</section>
+	{% endif %}
+</main>
+</body>
+</html>

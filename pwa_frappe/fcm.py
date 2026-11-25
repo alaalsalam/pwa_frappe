@@ -18,6 +18,8 @@ NOTIFICATION_TYPE_TITLES = {
 
 
 def get_fcm_settings():
+	if not frappe.conf.get("pwa_frappe_fcm_approved"):
+		frappe.throw(_("External notifications are disabled"), frappe.PermissionError)
 	return frappe.get_cached_doc("Service Worker")
 
 
@@ -54,6 +56,8 @@ def get_fcm_config() -> dict:
 @frappe.whitelist()
 def subscribe(fcm_token: str) -> dict:
 	"""Registers the current user's FCM token so they can receive push notifications."""
+	if not get_fcm_settings().enable_fcm:
+		frappe.throw(_("External notifications are disabled"), frappe.PermissionError)
 	if not fcm_token:
 		frappe.throw(_("fcm_token is required"))
 
@@ -71,6 +75,8 @@ def subscribe(fcm_token: str) -> dict:
 @frappe.whitelist()
 def unsubscribe(fcm_token: str) -> dict:
 	"""Removes the current user's FCM token."""
+	if not get_fcm_settings().enable_fcm:
+		frappe.throw(_("External notifications are disabled"), frappe.PermissionError)
 	if not fcm_token:
 		frappe.throw(_("fcm_token is required"))
 
@@ -210,6 +216,9 @@ def test_push_notification(user: str | None = None):
 
 	Usage: bench --site [site-name] execute pwa_frappe.fcm.test_push_notification --args "['Administrator']"
 	"""
+	frappe.only_for("System Manager")
+	if not get_fcm_settings().enable_fcm:
+		frappe.throw(_("External notifications are disabled"), frappe.PermissionError)
 	user = user or frappe.session.user
 	doc = frappe.get_doc(
 		{
