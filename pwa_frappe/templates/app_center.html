@@ -53,7 +53,7 @@
 			<p class="english" lang="en" dir="ltr">{{ item.name_en | e }}</p>
 			<p>{{ item.description | e }}</p>
 			<div class="actions">
-				<a class="button" href="{{ path_for(item) }}" aria-label="طريقة تثبيت {{ item.name_ar | e }}">التثبيت</a>
+				<a class="button" href="{{ path_for(item) }}/" aria-label="طريقة تثبيت {{ item.name_ar | e }}">التثبيت</a>
 				<a class="button secondary" href="{{ path_for(item) }}/open" aria-label="فتح {{ item.name_ar | e }}">فتح</a>
 			</div>
 		</article>

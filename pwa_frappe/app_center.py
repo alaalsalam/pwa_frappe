@@ -53,8 +53,8 @@ def manifest(app):
 		icons.append({"src": app.maskable_512, "sizes": "512x512", "type": "image/png", "purpose": "maskable"})
 	return {
 		"id": path,
-		"start_url": path + "?launch=1",
-		"scope": "/",
+		"start_url": path + "/?launch=1",
+		"scope": path + "/",
 		"name": app.name_ar,
 		"short_name": app.short_name,
 		"description": app.description,
@@ -113,6 +113,8 @@ class AppCenter(BaseRenderer):
 			if may_open(app):
 				return redirect(app.entry_route)
 			return self.page(app=app, status=403)
+		if not frappe.request.path.endswith("/"):
+			return redirect(install_path(app) + "/")
 		return self.page(app=app)
 
 	@staticmethod
