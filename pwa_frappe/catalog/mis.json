@@ -20,5 +20,165 @@
     "description_en": "Follow up on public services, correspondence and appointments.",
     "entry_route": "/desk/public-service-home",
     "theme_color": "#18605c"
+  },
+  {
+    "app_code": "basic-system",
+    "target_app": "basic_system",
+    "name_ar": "النظام الأساسي",
+    "name_en": "Basic System",
+    "short_name": "MIS Basic System",
+    "description": "إدارة الحوكمة ونطاقات الوصول والإعدادات المشتركة.",
+    "entry_route": "/desk/basic-system",
+    "theme_color": "#21596b"
+  },
+  {
+    "app_code": "fms",
+    "target_app": "fms",
+    "name_ar": "النظام المالي",
+    "name_en": "Financial Management System",
+    "short_name": "MIS FMS",
+    "description": "الوصول إلى العمليات المالية والموازنات والتقارير.",
+    "entry_route": "/desk/fms-control-center",
+    "theme_color": "#145d48"
+  },
+  {
+    "app_code": "pms",
+    "target_app": "pms",
+    "name_ar": "نظام إدارة المشاريع",
+    "name_en": "Project Management System",
+    "short_name": "MIS PMS",
+    "description": "تخطيط المشاريع ومتابعة أعمال المواقع والتسليم.",
+    "entry_route": "/desk/project-management",
+    "theme_color": "#245a87"
+  },
+  {
+    "app_code": "icpms",
+    "target_app": "icpms",
+    "name_ar": "نظام المخزون والمشتريات والتعاقدات",
+    "name_en": "Inventory & Contracting and Purchase Management System",
+    "short_name": "MIS ICPMS",
+    "description": "إدارة المشتريات والتعاقدات والمخزون والأصول.",
+    "entry_route": "/desk/inventory-procurement-contracts",
+    "theme_color": "#885622"
+  },
+  {
+    "app_code": "gis",
+    "target_app": "gis",
+    "name_ar": "نظم المعلومات الجغرافية",
+    "name_en": "Geographic Information System",
+    "short_name": "MIS GIS",
+    "description": "فتح الخرائط والسجل المكاني وأدوات GIS.",
+    "entry_route": "/desk/gis-platform",
+    "theme_color": "#17654d"
+  },
+  {
+    "app_code": "tomms",
+    "target_app": "tomms",
+    "name_ar": "نظام التشغيل والصيانة الفنية",
+    "name_en": "Technical Operations and Maintenance Management System",
+    "short_name": "MIS TOMMS",
+    "description": "الوصول إلى التخطيط والأصول والتشغيل والصيانة الفنية.",
+    "entry_route": "/desk/tomms-f1",
+    "theme_color": "#314b65"
+  },
+  {
+    "app_code": "ams",
+    "target_app": "ams",
+    "name_ar": "النظام الإداري",
+    "name_en": "Administrative Management System",
+    "short_name": "MIS AMS",
+    "description": "إدارة شؤون الموظفين والخدمات والعمليات الإدارية.",
+    "entry_route": "/desk/ams",
+    "theme_color": "#644780"
+  },
+  {
+    "app_code": "ucs",
+    "target_app": "ucs",
+    "name_ar": "نظام الشكاوي والبلاغات",
+    "name_en": "Unified Complaints System",
+    "short_name": "MIS UCS",
+    "description": "تسجيل الشكاوى والبلاغات ومتابعة معالجتها.",
+    "entry_route": "/desk/ucs-cases",
+    "theme_color": "#125a78"
+  },
+  {
+    "app_code": "adms",
+    "target_app": "adms",
+    "name_ar": "نظام إدارة الوثائق والأرشيف المؤسسي",
+    "name_en": "Archiving and Document Management System",
+    "short_name": "MIS ADMS",
+    "description": "إدارة الوثائق المؤسسية والتصنيف والحفظ.",
+    "entry_route": "/desk/document-archive",
+    "theme_color": "#69475b"
+  },
+  {
+    "app_code": "tcbs",
+    "target_app": "tcbs",
+    "name_ar": "نظام التدريب وبناء القدرات",
+    "name_en": "Training and Capacity Building System",
+    "short_name": "MIS TCBS",
+    "description": "الوصول إلى كتالوج التدريب وتخطيطه ومتابعة نتائجه.",
+    "entry_route": "/desk/tcbs-training-catalogue",
+    "theme_color": "#405e33"
+  },
+  {
+    "app_code": "mds",
+    "target_app": "mds",
+    "name_ar": "نظام لوحات المعلومات الرئيسية",
+    "name_en": "Main Dashboard System",
+    "short_name": "MIS MDS",
+    "description": "عرض لوحات المعلومات الرئيسية بحسب الصلاحيات.",
+    "entry_route": "/desk/management-dashboards",
+    "theme_color": "#3f5089"
+  },
+  {
+    "app_code": "piis",
+    "target_app": "piis",
+    "name_ar": "نظام مؤشرات الأداء والمعلومات",
+    "name_en": "Performance Information Indicator System",
+    "short_name": "MIS PIIS",
+    "description": "متابعة مؤشرات الأداء والتقييمات والتقارير.",
+    "entry_route": "/desk/performance-indicators",
+    "theme_color": "#6e4f76"
+  },
+  {
+    "app_code": "eas",
+    "target_app": "eas",
+    "name_ar": "نظام الأرشفة الإلكترونية",
+    "name_en": "Electronic Archiving System",
+    "short_name": "MIS EAS",
+    "description": "الوصول إلى الأرشيف الإلكتروني وأدلة المستندات بحسب الصلاحيات.",
+    "entry_route": "/desk/eas",
+    "theme_color": "#614c32"
+  },
+  {
+    "app_code": "meter",
+    "target_app": "meter_app",
+    "name_ar": "تطبيق قراءة العدادات والتحصيل",
+    "name_en": "Meter reading and revenue collection application",
+    "short_name": "MIS Meter Desk",
+    "description": "مساحة عمل الويب لقراءات العدادات والتحصيل.",
+    "entry_route": "/desk/meter-reading-collection",
+    "theme_color": "#356c7b"
+  },
+  {
+    "app_code": "field-mobile",
+    "target_app": "field_mobile",
+    "name_ar": "إدارة قناة الجوال الميداني",
+    "name_en": "Field Mobile Administration",
+    "short_name": "MIS Field Mobile",
+    "description": "متابعة إعدادات قناة العمل الميداني من مساحة Frappe.",
+    "entry_route": "/desk/field-mobile",
+    "theme_color": "#275762"
+  },
+  {
+    "app_code": "web-portal",
+    "target_app": "web_portal",
+    "name_ar": "إدارة بوابة الويب",
+    "name_en": "Web Portal Administration",
+    "short_name": "MIS Web Portal",
+    "description": "متابعة إعدادات بوابة الويب من مساحة Frappe.",
+    "entry_route": "/desk/web-portal",
+    "theme_color": "#2c558a"
   }
 ]

@@ -15,7 +15,7 @@ from pwa_frappe import __version__
 
 CENTER = "/mis-apps"
 DOCTYPE = "PWA Application"
-APP_PATH = re.compile(r"/?mis-apps/([a-z0-9]+(?:-[a-z0-9]+)*)(?:/(manifest\.webmanifest|open|install))?")
+APP_PATH = re.compile(r"/?mis-apps/([a-z0-9]+(?:-[a-z0-9]+)*)(?:/(manifest\.webmanifest|open|install|preview))?")
 FIELDS = (
 	"name", "name_ar", "name_en", "short_name", "description", "description_en", "target_app",
 	"entry_route", "theme_color", "background_color", "icon_192", "icon_512", "maskable_512",
@@ -95,14 +95,19 @@ class AppCenter(BaseRenderer):
 		response.headers["Cache-Control"] = "no-store"
 		response.headers["X-Content-Type-Options"] = "nosniff"
 		response.headers["X-Robots-Tag"] = "noindex"
+		response.headers["X-PWA-Release"] = __version__
 		return response
 
 	def render_app(self):
-		apps = public_apps()
 		if self.path == "mis-apps":
-			return self.page(apps=apps)
+			return self.page(apps=public_apps())
 		code, action = APP_PATH.fullmatch(self.path).groups()
-		app = next((item for item in apps if item.name == code), None)
+		if action == "preview":
+			if not can_manage():
+				return self.page(status=404)
+			app = frappe.db.get_value(DOCTYPE, code, FIELDS, as_dict=True)
+			return self.page(app=app, status=200 if app else 404, preview=True)
+		app = next((item for item in public_apps() if item.name == code), None)
 		if not app:
 			return self.page(status=404)
 		if action == "manifest.webmanifest":
@@ -118,9 +123,9 @@ class AppCenter(BaseRenderer):
 		return self.page(app=app)
 
 	@staticmethod
-	def page(app=None, apps=None, status=200):
+	def page(app=None, apps=None, status=200, preview=False):
 		body = frappe.render_template("pwa_frappe/templates/app_center.html", {
 			"app": app, "apps": apps, "status": status, "center": CENTER,
-			"path_for": install_path, "release": __version__,
+			"path_for": install_path, "preview": preview,
 		})
 		return Response(body, status=status, mimetype="text/html")
