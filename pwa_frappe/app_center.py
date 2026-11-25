@@ -15,7 +15,7 @@ from pwa_frappe import __version__
 
 CENTER = "/mis-apps"
 DOCTYPE = "PWA Application"
-APP_PATH = re.compile(r"/?mis-apps/([a-z0-9]+(?:-[a-z0-9]+)*)(?:/(manifest\.webmanifest|open))?")
+APP_PATH = re.compile(r"/?mis-apps/([a-z0-9]+(?:-[a-z0-9]+)*)(?:/(manifest\.webmanifest|open|install))?")
 FIELDS = (
 	"name", "name_ar", "name_en", "short_name", "description", "description_en", "target_app",
 	"entry_route", "theme_color", "background_color", "icon_192", "icon_512", "maskable_512",
@@ -53,7 +53,7 @@ def manifest(app):
 		icons.append({"src": app.maskable_512, "sizes": "512x512", "type": "image/png", "purpose": "maskable"})
 	return {
 		"id": path,
-		"start_url": path + "/?launch=1",
+		"start_url": path + "/install",
 		"scope": path + "/",
 		"name": app.name_ar,
 		"short_name": app.short_name,
@@ -113,8 +113,8 @@ class AppCenter(BaseRenderer):
 			if may_open(app):
 				return redirect(app.entry_route)
 			return self.page(app=app, status=403)
-		if not frappe.request.path.endswith("/"):
-			return redirect(install_path(app) + "/")
+		if action is None:
+			return redirect(install_path(app) + "/install")
 		return self.page(app=app)
 
 	@staticmethod
